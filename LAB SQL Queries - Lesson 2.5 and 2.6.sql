@@ -9,7 +9,7 @@ WHERE first_name = "Scarlett";
 SELECT COUNT(DISTINCT film_id)
 FROM sakila.inventory; -- 958 films on the inventory 
 
-SELECT COUNT(DISTINCT film_id)
+SELECT COUNT(DISTINCT title)
 FROM sakila.film; --  1000 films titles
 
 -- So we have 42 rented films and 958 are available
@@ -44,7 +44,7 @@ FROM SAKILA.RENTAL
 LIMIT 20;
 
 -- 9. Get release years.
-SELECT release_year
+SELECT DISTINCT(release_year)
 FROM film;
 
 -- 10. Get all films with ARMAGEDDON in the title. 
@@ -57,7 +57,8 @@ SELECT title
 FROM sakila.film
 WHERE title LIKE '%APOLLO';
 
--- 12. Get 10 the longest films.
+-- 12. Get 10 the longest films. 
+-- I interpretated like they want the longest films name
 SELECT title
 FROM sakila.film
 ORDER BY LENGTH(title) DESC

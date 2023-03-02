@@ -58,7 +58,6 @@ GROUP BY c.last_name
 ORDER BY c.last_name ASC;
 
 -- 8. List number of films per category.
- 
 SELECT f.title, c.name AS cat_name
 FROM film f
 JOIN film_category m 
