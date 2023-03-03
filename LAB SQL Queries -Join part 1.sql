@@ -42,11 +42,11 @@ INNER JOIN sakila.address a
 USING (address_id);
 
 -- 6. List each film and the number of actors who are listed for that film.
-SELECT f.title, COUNT(a.actor_id) AS num_actors
+SELECT f.film_id, f.title, COUNT(a.actor_id) AS num_actors
 FROM sakila.film f
 INNER JOIN sakila.film_actor a
 USING (film_id)
-GROUP BY f.title
+GROUP BY f.film_id, f.title
 ORDER BY num_actors DESC;
 
 -- 7. Using the tables payment and customer and the JOIN command, list the total paid by each customer. List the customers alphabetically by last name.
@@ -65,4 +65,4 @@ ON f.film_id = m.film_id
 JOIN category c 
 ON m.category_id = c.category_id
 ORDER BY cat_name;
- 
+
